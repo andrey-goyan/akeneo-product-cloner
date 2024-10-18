@@ -1,0 +1,48 @@
+{
+  "name": "flagbit/product-cloner-bundle",
+  "description": "The Flagbit Product Cloner Bundle gives you the possibility to quick cloning products within Akeneo PIM",
+  "keywords": ["akeneo", "product", "cloner"],
+  "type": "library",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Antonio Mansilla",
+      "email": "antonio.mansilla@flagbit.de"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Flagbit\\Bundle\\ProductClonerBundle\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Flagbit\\Bundle\\ProductClonerBundle\\Test\\": "tests/"
+    }
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/akeneo/pim-community-dev.git",
+      "branch": "master",
+      "no-api": true
+    }
+  ],
+  "require": {
+    "akeneo/pim-community-dev": "^5.0",
+    "ext-json": "*"
+  },
+  "require-dev": {
+    "phpspec/phpspec": "*",
+    "squizlabs/php_codesniffer": "*",
+    "overtrue/phplint": "*",
+    "phpunit/phpunit": "^8.0",
+    "symfony/debug-bundle": "^4.4",
+    "symfony/web-profiler-bundle": "^4.4",
+    "symfony/web-server-bundle": "^4.4"
+  },
+  "conflict": {
+    "akeneo/pim-enterprise-dev": "*"
+  }
+}

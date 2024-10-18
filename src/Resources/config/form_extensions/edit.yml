@@ -1,0 +1,55 @@
+extensions:
+    flagbit-product-model-edit-form-clone-button:
+        module: flagbit/product-edit-form/clone
+        parent: pim-product-model-edit-form-secondary-actions
+        targetZone: secondary-actions
+        aclResourceId: pim_enrich_product_model_remove
+        position: 90
+        config:
+            formName: flagbit-product-edit-form-clone-modal
+
+    flagbit-product-edit-form-clone-button:
+        module: flagbit/product-edit-form/clone
+        parent: pim-product-edit-form-secondary-actions
+        targetZone: secondary-actions
+        aclResourceId: pim_enrich_product_model_remove
+        position: 90
+        config:
+            formName: flagbit-product-edit-form-clone-modal
+
+    flagbit-product-edit-form-clone-modal:
+        module: flagbit/product-edit-form/clone-modal
+        config:
+            labels:
+                title: flagbit.confirmation.clone.product
+                subTitle: pim_enrich.entity.product.label
+                subTitleModel: pim_menu.item.product_model
+                content: confirmation.clone.product
+            successMessage: flagbit.entity.product.info.create_successful
+            postProductRoute: flagbit_product_cloner_product_clone
+            postProductModelRoute: flagbit_product_cloner_product_model_clone
+            editProductRoute: pim_enrich_product_index
+            variantFormName: flagbit-product-edit-form-fields-container
+            productFormName: flagbit-product-edit-form-create-sku
+            excludedProperties:
+                - type
+            editRoute: pim_enrich_product_index
+
+    flagbit-product-edit-form-fields-container:
+        module: pim/product-model-edit-form/add-child-form-fields-container
+        targetZone: fields-containercreation_code
+        config:
+            fieldModules:
+                akeneo-simple-select-field: pim-product-model-add-child-field-simple-select
+                akeneo-metric-field: pim-product-model-add-child-field-metric
+                akeneo-switch-field: pim-product-model-add-child-field-switch
+                akeneo-simple-select-reference-data-field: pim-product-model-add-child-field-simple-select-reference-data
+                akeneo-text-field: pim-product-model-add-child-field-text
+            codeFieldModule: pim-product-model-add-child-field-code
+
+    flagbit-product-edit-form-create-sku:
+        module: pim/form/common/creation/field
+        targetZone: fields-container
+        config:
+            identifier: code
+            label: pim_common.code

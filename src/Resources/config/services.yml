@@ -1,0 +1,33 @@
+services:
+    flagbit_product_cloner.controller.product_model:
+        class: Flagbit\Bundle\ProductClonerBundle\Controller\ProductModelController
+        arguments:
+            - '@pim_catalog.repository.product_model'
+            - '@pim_catalog.repository.attribute'
+            - '@pim_external_api_serializer'
+            - '@pim_catalog.factory.product_model'
+            - '@pim_catalog.updater.product_model'
+            - '@pim_catalog.saver.product_model'
+            - '@pim_catalog.validator.product'
+            - '@pim_enrich.normalizer.violation'
+            - '%flagbit_product_cloner.attribute_blacklist%'
+        tags: ['controller.service_arguments']
+
+    flagbit_product_cloner.controller.product:
+        class: Flagbit\Bundle\ProductClonerBundle\Controller\ProductController
+        arguments:
+            - '@pim_catalog.repository.product'
+            - '@pim_catalog.repository.attribute'
+            - '@pim_catalog.updater.product'
+            - '@pim_catalog.saver.product'
+            - '@pim_external_api_serializer'
+            - '@pim_catalog.validator.product'
+            - '@pim_user.context.user'
+            - '@pim_catalog.builder.product'
+            - '@pim_catalog.localization.localizer.converter'
+            - '@pim_catalog.comparator.filter.product'
+            - '@pim_enrich.converter.enrich_to_standard.product_value'
+            - '@pim_enrich.normalizer.product_violation'
+            - '@pim_catalog.builder.product'
+            - '%flagbit_product_cloner.attribute_blacklist%'
+        tags: ['controller.service_arguments']
