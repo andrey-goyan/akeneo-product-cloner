@@ -1,5 +1,5 @@
 {
-  "name": "flagbit/product-cloner-bundle",
+  "name": "andrey-goyan/akeneo-product-cloner",
   "description": "The Flagbit Product Cloner Bundle gives you the possibility to quick cloning products within Akeneo PIM",
   "keywords": ["akeneo", "product", "cloner"],
   "type": "library",
