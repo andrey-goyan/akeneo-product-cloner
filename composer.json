@@ -1,9 +1,10 @@
 {
   "name": "andrey-goyan/akeneo-product-cloner",
   "description": "The Flagbit Product Cloner Bundle gives you the possibility to quick cloning products within Akeneo PIM",
+  "version": "7.0.0-stable",
   "keywords": ["akeneo", "product", "cloner"],
   "type": "library",
-  "minimum-stability": "dev",
+  "minimum-stability": "stable",
   "license": "MIT",
   "authors": [
     {
